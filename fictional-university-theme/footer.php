@@ -1,0 +1,1 @@
+<footer><p>Greetings from footer.php</p></footer>
