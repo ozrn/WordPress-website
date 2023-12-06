@@ -18,10 +18,12 @@ while (have_posts()) {
 
 <div class="container container--narrow page-section">
     <?php
-      if (wp_get_post_parent_id(get_the_ID())) { ?>
+      $theParentId = wp_get_post_parent_id(get_the_ID());
+      if ($theParentId) { ?>
     <div class="metabox metabox--position-up metabox--with-home-link">
-        <p><a class="metabox__blog-home-link" href="#"><i class="fa fa-home" aria-hidden="true"></i> Back to About
-                Us</a> <span class="metabox__main"><?php the_title(); ?></span></p>
+        <p><a class="metabox__blog-home-link" href="<?php echo get_permalink($theParentId) ?>"><i class="fa fa-home"
+                    aria-hidden="true"></i> Back to <?php echo get_the_title($theParentId); ?></a> <span
+                class="metabox__main"><?php the_title(); ?></span></p>
     </div>
     <?php }
     ?>
