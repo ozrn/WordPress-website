@@ -13,6 +13,7 @@ add_action('wp_enqueue_scripts', 'uni_files');
 
 function uni_features() {
     add_theme_support('title-tag');
+    register_nav_menu('headerMenuLocation', 'Header Menu Location');
 }
 
 add_action('after_setup_theme', 'uni_features');
